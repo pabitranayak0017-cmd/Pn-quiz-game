@@ -6,41 +6,39 @@
   <link rel="stylesheet" href="./style/style.css">
 </head>
 <body>
+  <div class="app">
 
-  <!-- Welcome Screen -->
-  <section class="welcome active">
-    <div class="card">
-      <h1>Simple Coding Quiz 2026</h1>
-      <p>Test your coding knowledge and sharpen your skills.</p>
+    <!-- Intro Screen -->
+    <div class="screen active" id="intro">
+      <p class="tag">Interactive Coding Quiz</p>
+      <h1>Test Your <span>Logic</span></h1>
+      <p class="desc">Enter your name to start the quiz</p>
 
-      <ul>
-        <li>✔ Beginner friendly</li>
-        <li>✔ MCQ based</li>
-        <li>✔ Instant result</li>
-      </ul>
-
-      <button id="startQuiz">Start Quiz</button>
+      <input type="text" id="username" placeholder="Enter your name">
+      <button id="startBtn">Start Quiz</button>
     </div>
-  </section>
 
-  <!-- Quiz Screen -->
-  <section class="quiz">
-    <div class="quiz-box">
-      <h2 id="question">Question</h2>
-      <div id="answer-buttons"></div>
-      <button id="next-btn">Next</button>
+    <!-- Quiz Screen -->
+    <div class="screen" id="quiz">
+      <div class="player-bar">
+        Player: <span id="playerName"></span>
+      </div>
+
+      <h2 id="question"></h2>
+      <div id="answers"></div>
+      <button id="nextBtn">Next</button>
     </div>
-  </section>
 
-  <!-- Result Screen -->
-  <section class="result">
-    <div class="card">
-      <h2>Your Result</h2>
-      <p id="scoreText"></p>
-      <button onclick="location.reload()">Restart Quiz</button>
+    <!-- Result Screen -->
+    <div class="screen" id="result">
+      <h2>Quiz Completed</h2>
+      <pre id="finalScore"></pre>
+      <button onclick="location.reload()">Play Again</button>
+      <a href="admin.html"><button>Admin View</button></a>
     </div>
-  </section>
 
-<script src="script.js"></script>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
