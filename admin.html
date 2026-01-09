@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Quiz Results</title>
+  <style>
+    body { font-family: Arial; padding: 20px; background: #f0f0f0; }
+    h1 { margin-bottom: 20px; }
+    pre { background: #111; color: #fff; padding: 10px; border-radius: 6px; margin-bottom: 20px; overflow-x: auto; }
+    h2 { margin-top: 20px; }
+  </style>
+</head>
+<body>
+
+<h1>All Quiz Results</h1>
+<div id="resultsContainer"></div>
+
+<script>
+const container = document.getElementById("resultsContainer");
+const allPlayers = JSON.parse(localStorage.getItem("quizResults")) || [];
+
+if(allPlayers.length === 0){
+  container.innerText = "No results yet.";
+} else {
+  allPlayers.forEach(player => {
+    const playerBlock = document.createElement("div");
+    playerBlock.innerHTML = `<h2>${player.name} - Score: ${player.score}</h2>`;
+    const pre = document.createElement("pre");
+    let text = "";
+    player.results.forEach((r, i) => {
+      text += `${i+1}. ${r.question} - ${r.correct ? "Correct" : "Wrong"}`;
+      if(r.output) text += ` | Output: ${r.output}`;
+      text += "\n";
+    });
+    pre.innerText = text;
+    playerBlock.appendChild(pre);
+    container.appendChild(playerBlock);
+  });
+}
+</script>
+
+</body>
+</html>
