@@ -92,17 +92,27 @@ const questions = [
 ];
 
 
+const welcome = document.querySelector(".welcome");
+const quiz = document.querySelector(".quiz");
+const result = document.querySelector(".result");
+
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
+const scoreText = document.getElementById("scoreText");
 
 let currentQuestionIndex = 0;
 let score = 0;
 
+document.getElementById("startQuiz").onclick = () => {
+  welcome.classList.remove("active");
+  quiz.classList.add("active");
+  startQuiz();
+};
+
 function startQuiz() {
   currentQuestionIndex = 0;
   score = 0;
-  nextButton.innerText = "Next";
   showQuestion();
 }
 
@@ -125,9 +135,7 @@ function showQuestion() {
 
 function resetState() {
   nextButton.style.display = "none";
-  while (answerButtons.firstChild) {
-    answerButtons.removeChild(answerButtons.firstChild);
-  }
+  answerButtons.innerHTML = "";
 }
 
 function selectAnswer(e) {
@@ -151,20 +159,17 @@ function selectAnswer(e) {
   nextButton.style.display = "block";
 }
 
-function showScore() {
-  resetState();
-  questionElement.innerText = `You scored ${score} out of ${questions.length}`;
-  nextButton.innerText = "Play Again";
-  nextButton.style.display = "block";
-}
-
-nextButton.addEventListener("click", () => {
+nextButton.onclick = () => {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
     showQuestion();
   } else {
-    showScore();
+    showResult();
   }
-});
+};
 
-startQuiz();
+function showResult() {
+  quiz.classList.remove("active");
+  result.classList.add("active");
+  scoreText.innerText = `You scored ${score} out of ${questions.length}`;
+}
