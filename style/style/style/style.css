@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app {
+  width: 380px;
+}
+
+.screen {
+  display: none;
+  background: #020617;
+  color: #fff;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+}
+
+.screen.active {
+  display: block;
+}
+
+/* Intro */
+.tag {
+  font-size: 12px;
+  color: #38bdf8;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+h1 span {
+  color: #22c55e;
+}
+
+.desc {
+  font-size: 14px;
+  margin-bottom: 20px;
+  color: #cbd5f5;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom: 15px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background: #22c55e;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+button:hover {
+  background: #16a34a;
+}
+
+/* Quiz */
+.player-bar {
+  background: #1f2937;
+  padding: 8px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+#answers button {
+  background: #333;
+  color: #fff;
+  margin: 6px 0;
+}
+
+#answers button:hover {
+  background: #555;
+}
+
+.correct {
+  background: #2e7d32 !important;
+}
+
+.wrong {
+  background: #c62828 !important;
+}
+
+#nextBtn {
+  display: none;
+  margin-top: 10px;
+  background: #2196f3;
+}
+
+pre {
+  background: #111;
+  padding: 10px;
+  border-radius: 6px;
+  margin-top: 10px;
+  overflow-x: auto;
+}
