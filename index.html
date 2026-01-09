@@ -2,25 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>JavaScript Quiz Game</title>
+  <title>Pn Coding Quiz 2026</title>
   <link rel="stylesheet" href="./style/style.css">
-  <link rel="stylesheet" href="script.js">
 </head>
 <body>
 
-  <div class="quiz-container">
-    <h2 id="question">Question text</h2>
+  <!-- Welcome Screen -->
+  <section class="welcome active">
+    <div class="card">
+      <h1>Simple Coding Quiz 2026</h1>
+      <p>Test your coding knowledge and sharpen your skills.</p>
 
-    <div id="answer-buttons">
-      <button class="btn">Answer 1</button>
-      <button class="btn">Answer 2</button>
-      <button class="btn">Answer 3</button>
-      <button class="btn">Answer 4</button>
+      <ul>
+        <li>✔ Beginner friendly</li>
+        <li>✔ MCQ based</li>
+        <li>✔ Instant result</li>
+      </ul>
+
+      <button id="startQuiz">Start Quiz</button>
     </div>
+  </section>
 
-    <button id="next-btn">Next</button>
-  </div>
+  <!-- Quiz Screen -->
+  <section class="quiz">
+    <div class="quiz-box">
+      <h2 id="question">Question</h2>
+      <div id="answer-buttons"></div>
+      <button id="next-btn">Next</button>
+    </div>
+  </section>
 
-  <script src="script.js"></script>
+  <!-- Result Screen -->
+  <section class="result">
+    <div class="card">
+      <h2>Your Result</h2>
+      <p id="scoreText"></p>
+      <button onclick="location.reload()">Restart Quiz</button>
+    </div>
+  </section>
+
+<script src="script.js"></script>
 </body>
 </html>
